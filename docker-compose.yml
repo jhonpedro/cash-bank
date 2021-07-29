@@ -1,0 +1,10 @@
+version: '3.6'
+
+services:
+  postgres:
+    image: postgres:13-alpine
+    environment:
+      - POSTGRES_PASSWORD=12345
+      - POSTGRES_DB=cash_bank
+    ports:
+      - 5433:5432
