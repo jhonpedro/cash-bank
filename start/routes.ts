@@ -29,6 +29,8 @@ Route.resource('/admins', 'AdminsController')
 
 Route.group(() => {
   Route.post('/', 'ClientsController.store')
+  Route.get('/', 'ClientsController.index')
+  Route.get('/balances', 'ClientsController.balances')
 }).prefix('/clients')
 
 Route.group(() => {
