@@ -1,4 +1,5 @@
 import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import axios from 'axios'
 import Kafka from 'App/Services/kafka'
 
 export default class AppProvider {
@@ -7,6 +8,7 @@ export default class AppProvider {
   public register() {
     // Register your own bindings
     this.app.container.singleton('Cash_Bank/Kafka', () => new Kafka())
+    this.app.container.singleton('Cash_Bank/Axios', () => axios)
   }
 
   public async boot() {
